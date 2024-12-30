@@ -31,8 +31,10 @@ class CityResource extends Resource
                 ->afterStateUpdated(function ($state, callable $set)  {
                     $set('slug', Str::slug($state));
                 }),
+
                 Forms\Components\TextInput::make('slug')
                 ->required(),
+
                 Forms\Components\FileUpload::make('image')
                 ->image()
                 ->directory('cities')
