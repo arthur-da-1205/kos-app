@@ -27,13 +27,16 @@ class CityResource extends Resource
                 Forms\Components\TextInput::make('name')
                 ->required()
                 ->reactive()
-                ->debounce(100)
+                ->debounce(200)
                 ->afterStateUpdated(function ($state, callable $set)  {
-                    $set('slug', Str::slug($state));
-                }),
+                    $set('slug', \Str::slug($state));
+                })
+                ->columnSpan(1.5),
 
                 Forms\Components\TextInput::make('slug')
-                ->required(),
+                ->required()
+                ->readOnly()
+                ->columnSpan(0.5),
 
                 Forms\Components\FileUpload::make('image')
                 ->image()
