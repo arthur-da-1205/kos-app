@@ -33,6 +33,7 @@ class CategoryResource extends Resource
                     $set('slug', Str::slug($state));
                 }),
                 Forms\Components\TextInput::make('slug')
+                ->readOnly()
                 ->required(),
                 Forms\Components\FileUpload::make('image')
                 ->image()

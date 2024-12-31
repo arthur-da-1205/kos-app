@@ -21,15 +21,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
-            $table->foreignId('city_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('city_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->text('description');
             $table->integer('price');
             $table->text('address');
         });
 
         Schema::table('rooms', function (Blueprint $table) {
-            $table->foreignId('boarding_house_id')->constained();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('room_type');
             $table->integer('square_feet');
@@ -38,19 +38,19 @@ return new class extends Migration
         });
 
         Schema::table('room_images', function (Blueprint $table) {
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('room_id')->constrained()->cascadeOnDelete();
             $table->string('image');
         });
 
         Schema::table('bonuses', function (Blueprint $table) {
-            $table->foreignId('boarding_house_id')->constrained();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->string('image');
             $table->string('name');
             $table->string('description');
         });
 
         Schema::table('testimonials', function (Blueprint $table) {
-            $table->foreignId('boarding_house_id')->constrained();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->string('photo');
             $table->string('content');
             $table->integer('rating');
@@ -58,8 +58,8 @@ return new class extends Migration
 
         Schema::table('transactions', function (Blueprint $table) {
             $table->string('code');
-            $table->foreignId('boarding_house_id')->constrained();
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('room_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('email');
             $table->string('phone_number');

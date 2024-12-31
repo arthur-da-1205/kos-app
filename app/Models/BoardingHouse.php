@@ -10,13 +10,14 @@ class BoardingHouse extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 
-        'slug', 
+        'name',
+        'slug',
         'thumbnail',
         'city_id',
         'category_id',
         'price',
-        'address'
+        'address',
+        'description'
     ];
 
     public function city() {
@@ -31,7 +32,7 @@ class BoardingHouse extends Model
         return $this->hasMany(Room::class);
     }
 
-    public function bouses() {
+    public function bonuses() {
         return $this->hasMany(Bonus::class);
     }
 

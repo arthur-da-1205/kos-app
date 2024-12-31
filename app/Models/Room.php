@@ -23,7 +23,7 @@ class Room extends Model
     }
 
     public function images() {
-        return $this->hasMany(RoomImages::class);
+        return $this->hasMany(RoomImage::class);
     }
 
     public function transactions() {
