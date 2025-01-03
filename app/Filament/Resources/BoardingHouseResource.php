@@ -21,7 +21,7 @@ class BoardingHouseResource extends Resource
 {
     protected static ?string $model = BoardingHouse::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home-modern';
 
     public static function form(Form $form): Form
     {
@@ -42,7 +42,7 @@ class BoardingHouseResource extends Resource
                         ->reactive()
                         ->debounce(200)
                         ->afterStateUpdated(function ($state, callable $set)  {
-                            $set('slug', \Str::slug($state));
+                            $set('slug', Str::slug($state));
                         })
                         ->columnSpan(1),
 

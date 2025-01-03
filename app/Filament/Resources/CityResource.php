@@ -18,7 +18,7 @@ class CityResource extends Resource
 {
     protected static ?string $model = City::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-map-pin';
 
     public static function form(Form $form): Form
     {
@@ -29,7 +29,7 @@ class CityResource extends Resource
                 ->reactive()
                 ->debounce(200)
                 ->afterStateUpdated(function ($state, callable $set)  {
-                    $set('slug', \Str::slug($state));
+                    $set('slug', Str::slug($state));
                 })
                 ->columnSpan(1.5),
 

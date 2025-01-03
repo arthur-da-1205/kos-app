@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('slug');
+            $table->softDeletes();
         });
 
         Schema::table('boarding_houses', function (Blueprint $table) {
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('price');
             $table->text('address');
+            $table->softDeletes();
         });
 
         Schema::table('rooms', function (Blueprint $table) {
@@ -35,11 +37,13 @@ return new class extends Migration
             $table->integer('square_feet');
             $table->integer('price_per_month');
             $table->boolean('is_available');
+            $table->softDeletes();
         });
 
         Schema::table('room_images', function (Blueprint $table) {
             $table->foreignId('room_id')->constrained()->cascadeOnDelete();
             $table->string('image');
+            $table->softDeletes();
         });
 
         Schema::table('bonuses', function (Blueprint $table) {
@@ -47,6 +51,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('description');
+            $table->softDeletes();
         });
 
         Schema::table('testimonials', function (Blueprint $table) {
@@ -54,6 +59,7 @@ return new class extends Migration
             $table->string('photo');
             $table->string('content');
             $table->integer('rating');
+            $table->softDeletes();
         });
 
         Schema::table('transactions', function (Blueprint $table) {
@@ -69,6 +75,7 @@ return new class extends Migration
             $table->integer('duration');
             $table->integer('total_amount')->nullable();
             $table->date('transaction_date')->nullable();
+            $table->softDeletes();
         });
     }
 
