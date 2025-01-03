@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interfaces\BoardinHouseRepositoryInterface;
+use App\Interfaces\BoardingHouseRepositoryInterface;
 use App\Models\BoardingHouse;
 use Filament\Forms\Components\Builder;
 
-class BoardingHouseRepository implements BoardinHouseRepositoryInterface {
+class BoardingHouseRepository implements BoardingHouseRepositoryInterface {
     public function getAllBoardingHouses($search=null, $city=null, $category=null) {
         $query=BoardingHouse::query();
 
