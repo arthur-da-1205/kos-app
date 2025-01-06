@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BoardingHouseResource\Pages;
-use App\Filament\Resources\BoardingHouseResource\RelationManagers;
+// use App\Filament\Resources\BoardingHouseResource\RelationManagers;
 use App\Models\BoardingHouse;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -12,8 +12,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 // use Filament\Forms\Compenents\Tabs;
 // use Filament\Forms\Components\Select;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+// use Illuminate\Database\Eloquent\Builder;
+// use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 

@@ -7,6 +7,6 @@ use App\Models\Category;
 
 class CategoryRepository implements CategoryRepositoryInterface {
     public function getAllCategories() {
-        Category::all();
+        return Category::all();
     }
 }
